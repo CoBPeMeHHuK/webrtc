@@ -1,6 +1,6 @@
 module.exports = {
     productionSourceMap: false,
-	devServer: {
+    devServer: {
         disableHostCheck: true
     }
 };
