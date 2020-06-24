@@ -45,7 +45,7 @@ export const videoConfiguration = {
             console.log('попытка')
             console.log(navigator)
 
-            if ("mediaDevices" in navigator) {
+         //   if ("mediaDevices" in navigator) {
                 console.log('перед попыткой подключения')
 
                 try {
@@ -60,7 +60,7 @@ export const videoConfiguration = {
                 } catch (error) {
                     log(`getUserMedia error: ${error}`)
                 }
-            }
+           // }
         },
         getAudioVideo() {
             const video = this.localStream.getVideoTracks()
