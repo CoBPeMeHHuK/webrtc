@@ -43,6 +43,7 @@ export const videoConfiguration = {
         async getUserMedia() {
             log(`Requesting ${this.username} video stream`)
             console.log('попытка')
+            console.log(navigator)
 
             if ("mediaDevices" in navigator) {
                 console.log('перед попыткой подключения')
