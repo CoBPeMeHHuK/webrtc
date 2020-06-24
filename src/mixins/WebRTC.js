@@ -17,7 +17,7 @@ export const videoConfiguration = {
                     height: 250
                 },
             },
-            // TURN/STUN ice servers               
+            // TURN/STUN ice servers
             configuration: servers,
             // Offer config
             offerOptions: {
@@ -25,7 +25,7 @@ export const videoConfiguration = {
                 offerToReceiveVideo: 1
             },
 
-            // Local video 
+            // Local video
             myVideo: undefined,
             localStream: undefined,
             username: ""
@@ -44,11 +44,17 @@ export const videoConfiguration = {
             log(`Requesting ${this.username} video stream`)
 
             if ("mediaDevices" in navigator) {
+                console.log('перед попыткой подключения')
+
                 try {
+
+                    console.log('попытка подключения')
                     const stream = await navigator.mediaDevices.getUserMedia(this.constraints)
+                    console.log('stream',stream)
                     this.myVideo.srcObject = stream
                     this.myVideo.volume = 0
                     this.localStream = stream
+                    console.log('this.localStream',this.localStream)
                 } catch (error) {
                     log(`getUserMedia error: ${error}`)
                 }
